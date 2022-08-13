@@ -1,0 +1,19 @@
+{
+  "private": true,
+  "dependencies": {
+    "elm": "^0.19.1-5",
+    "elm-format": "^0.8.5",
+    "elm-review": "^2.7.0",
+    "elm-test": "^0.19.1-revision7",
+    "rimraf": "^3.0.2"
+  },
+  "scripts": {
+    "start": "elm reactor",
+    "build": "rimraf docs/ && elm make --output=./docs/index.html src/Main.elm",
+    "format": "elm-format src",
+    "review": "elm-review --fix",
+    "test": "elm-review && elm-format --validate src/ && elm make --output=/dev/null src/Main.elm"
+  },
+  "author": "Sakura-chan the Goat",
+  "license": "MIT"
+}
