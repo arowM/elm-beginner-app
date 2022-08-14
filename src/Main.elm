@@ -51,8 +51,7 @@ update msg model =
         ReceiveCurrentPosixTime current ->
             -- Elm Runtime System に更新してもらう新しい Model を構築
             -- 元の Model の `posix` フィールドを置き換えた新しい Model を返り値にしている
-            ( { model
-                | posix = Time.posixToMillis current
+            ( { posix = Time.posixToMillis current
               }
             , Cmd.none
             )
