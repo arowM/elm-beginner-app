@@ -59,6 +59,8 @@ type Point
 
 {-| x, y座標から `Point` インスタンスを作成する
 
+    import Point exposing (Point)
+
     p : Point
     p =
         Point.fromRecord { x = 1, y = 2 }
@@ -74,6 +76,15 @@ fromRecord =
     p : Point
     p = Point.fromRecord { x = 1, y = 2 }
 
+    -- いわゆる関数っぽい記法
+    getX(p)
+    --> 1
+
+    -- 本来のElmの関数適用
+    getX p
+    --> 1
+
+    -- パイプを使って、よりゲッターっぽくつかう方法
     p |> getX
     --> 1
 
@@ -85,10 +96,8 @@ getX (Point point) =
 
 {-| y座標を取得する
 
-    p : Point
-    p = Point.fromRecord { x = 1, y = 2 }
-
-    p |> getY
+    Point.fromRecord { x = 1, y = 2 }
+        |> getY
     --> 2
 
 -}
@@ -104,9 +113,13 @@ getY (Point point) =
 
     p2 : Point
     p2 = p |> setX 3
+    -- `setX 3 p` と同等
 
     p2 |> getX
     --> 3
+
+    p |> getX
+    --> 1
 
 -}
 setX : Int -> Point -> Point
