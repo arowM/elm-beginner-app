@@ -46,7 +46,13 @@ config =
         |> Rule.ignoreErrorsForDirectories
             [ "tests/VerifyExamples"
             ]
+        |> Rule.ignoreErrorsForFiles
+            [ "src/Point.elm"
+            ]
     , NoUnused.Modules.rule
+        |> Rule.ignoreErrorsForFiles
+            [ "src/Point.elm"
+            ]
     , NoUnused.Parameters.rule
     , NoUnused.Patterns.rule
     , NoUnused.Variables.rule

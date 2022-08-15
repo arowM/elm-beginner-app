@@ -2,17 +2,20 @@
   "private": true,
   "dependencies": {
     "elm": "^0.19.1-5",
+    "elm-doc-preview": "^5.0.5",
     "elm-format": "^0.8.5",
     "elm-review": "^2.7.0",
     "elm-test": "^0.19.1-revision7",
+    "elm-verify-examples": "^5.2.0",
     "rimraf": "^3.0.2"
   },
   "scripts": {
     "start": "elm reactor",
+    "start:doc": "elm-doc-preview",
     "build": "rimraf docs/ && elm make --output=./docs/index.html src/Main.elm",
     "format": "elm-format src",
     "review": "elm-review --fix",
-    "test": "elm-review && elm-format --validate src/ && elm make --output=/dev/null src/Main.elm"
+    "test": "elm-review && elm-format --validate src/ && elm make --output=/dev/null src/Main.elm && elm-doc-preview --output /dev/null && elm-verify-examples --fail-on-warn -r"
   },
   "author": "Sakura-chan the Goat",
   "license": "MIT"

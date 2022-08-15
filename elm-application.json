@@ -1,0 +1,8 @@
+{
+    "name": "arowM/elm-beginner-app",
+    "summary": "Domain specific libraries for elm-beginner-app.",
+    "version": "1.0.0",
+    "exposed-modules": [
+        "Point"
+    ]
+}
